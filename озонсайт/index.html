@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск товара и генератор штрихкодов</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <!-- Анимированный фон с облаками и звездами -->
+    <div class="animated-background">
+        <div class="stars"></div>
+        <div class="clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+        </div>
+        <div class="twinkling"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>📦 Ozon Swaga Tools</h1>
+            <p>Поиск информации о товаре и генерация штрихкодов</p>
+            
+        </header>
+
+        <div class="search-section">
+            <h2>🔍 Поиск информации о товаре</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Введите артикул или название товара...">
+                <button onclick="searchProduct()">Найти</button>
+            </div>
+            <div id="searchResults" class="results"></div>
+        </div>
+
+        <div class="barcode-section">
+            <h2>📊 Генератор штрихкода</h2>
+            <div class="barcode-controls">
+                <input type="text" id="barcodeInput" placeholder="Введите код для штрихкода...">
+                <button onclick="generateBarcode()">Сгенерировать</button>
+                <select id="barcodeType">
+                    <option value="CODE128">CODE128</option>
+                    <option value="EAN13">EAN13</option>
+                    <option value="UPC">UPC</option>
+                </select>
+            </div>
+            <div class="barcode-output">
+                <svg id="barcode"></svg>
+                <div id="barcodeText" class="barcode-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
